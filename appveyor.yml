@@ -22,5 +22,6 @@ test_script:
 after_build:
 - cmd: >-
     CD %APPVEYOR_BUILD_FOLDER%\target\release\
+    
     appveyor PushArtifact paktool.exe
     
