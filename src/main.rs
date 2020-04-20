@@ -46,12 +46,14 @@ fn main() -> io::Result<()> {
     for section in 0..section_count {
         let offset = read_u64(&input_file)?;
         sections[section].offset = offset;
+
         if section == 0 {   
             continue;
-        } else if section == (section_count - 1) {
+        } 
+
+        sections[section - 1].size = offset - sections[section - 1].offset;
+        if section == (section_count - 1) {
             sections[section].size = input_file.stream_len()? - offset;
-        } else {
-            sections[section - 1].size = offset - sections[section - 1].offset;
         }
     }
 
