@@ -130,10 +130,10 @@ fn main() -> io::Result<()> {
 
     // pack if unpacked
     if pak_magic == PAK_MAGIC {
-        let output_file = File::create(file_name.replace("_decompressed.pak", ".pak"))?;
+        let output_file = File::create(file_name.replace("_decompressed.p", ".p"))?;
         pack(input_file, output_file)
     } else {
-        let output_file = File::create(file_name.replace(".pak", "_decompressed.pak"))?;
+        let output_file = File::create(file_name.replace(".p", "_decompressed.p"))?;
         unpack(input_file, output_file)
     }
 
