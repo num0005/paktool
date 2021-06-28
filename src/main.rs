@@ -1,4 +1,5 @@
 #![feature(seek_convenience)]
+#![feature(seek_stream_len)]
 use std::{env, fs::File, io::{self, Read, Seek, SeekFrom, Write}};
 use miniz_oxide::{deflate::{compress_to_vec_zlib}};
 
